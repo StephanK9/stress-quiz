@@ -2,30 +2,37 @@ $(document).ready(function() {
 $("#personality-quiz").submit(function(event) {
   event.preventDefault();
 
-  $("input:checkbox:checked").each(function(){
+  var newArray = [];
+  $("input:checkbox:checked").each(function() {
     var stressQuizMode = $(this).val();
+    newArray.push(stressQuizMode);
+  });
 
-
-
-  var result = newArray("input:checkbox:checked");
   var a = 0;
   var b = 0;
   var c = 0;
 
-  for (index=0; index < result.length; index ++) {
 
-  if (result === "a") {
-  ("#quiz-responses").show(); }
+for (var index=0; index < newArray.length; index ++) {
 
-  else if  ( result === "b") {
-("#quiz2-responses").show(); }
+  if (newArray[index] === "a") { a++
 
- else (result === "c") {
-   ("#quiz3-responses").show();
- }
+}  else if  ( newArray[index] === "b") { b++
+
+}  else { c++ }
 
  }
 
-   });
+if (a>b && a>c) {
+  $("#quiz-responses").show();
+}
+else if (b>c) {
+  $("#quiz2-responses").show();
+}
+ else {
+   $("#quiz3-responses").show();
+ }
+
+
  });
 });

@@ -1,9 +1,12 @@
 #quiz-responses {
   display: none;
+  color: red;
 }
 #quiz2-responses {
   display: none;
+  color: green;
 }
 #quiz3-responses {
   display: none;
+  color: blue;
 }
